@@ -13,11 +13,11 @@ if (isset ($_POST)) {
         $sqlInsertVideo = "INSERT INTO videos VALUES (NULL, :url, :titulo)";
         $adicionar = $PDO->PREPARE($sqlInsertVideo);
 
-        if ($adicionar->execute($dadosVideo) === false){
-            header('Location: /index.php?sucesso=0');
+        if ($adicionar->execute($dadosVideo) !== false){
+            header('Location: ./index.php?sucesso=1');
         }
         else{
-            header('Location: /index.php?sucesso=1');
+            header('Location: ./index.php?sucesso=0');
         }
     }
     else {

@@ -49,7 +49,12 @@ else {
 </header>
 
 <main class="container">
-    <form class="container__formulario" action="<?php echo $id !== false ? '.editar-video.php' : '.novo-video.php'; ?>" method="post">
+    <form class="container__formulario" action="<?php if (!empty($id)) {
+        echo 'editar-video.php?id=' . $id;
+    } else {
+        echo 'novo-video.php';
+    }
+    ?>" method="post">
         <h2 class="formulario__titulo">Envie um vídeo!</h2>
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="url">Link embed</label>

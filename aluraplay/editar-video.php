@@ -14,12 +14,16 @@ $statement = $PDO->prepare($sqledit);
     $statement->bindvalue(':id', $id, PDO::PARAM_INT);
 
 if ($statement->execute() === true){
-    echo "Video editado com sucesso";
-    header('Location: /index.php?sucesso=1');
+    header('Location: ./index.php?sucesso=1');
+    exit();
 }
 else {
-    header('Location: /index.php?sucesso=0');
-}}
+    header('Location: ./index.php?sucesso=0');
+    exit();
+
+}
+}
 else {
-    ECHO "DADOS INVALIDOS";
+    header('Location: ./index.php?sucesso=0');
+    exit();
 }

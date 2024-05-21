@@ -10,10 +10,10 @@ if ($id !== false) {
 
     if($statement->execute()){
         echo "Deu tudo certo";
-        header ('Location: index.php?sucesso=0');
+        header ('Location: index.php?sucesso=3');
     }
     else {
-    header ('Location: index.php?sucesso=1');
+    header ('Location: index.php?sucesso=4');
 }}
 
 
